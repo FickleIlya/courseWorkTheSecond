@@ -4,6 +4,7 @@ import com.example.courseworkthesecond.question.Question;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.context.annotation.SessionScope;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -12,9 +13,11 @@ import java.util.Random;
 public class QuestionRepository {
 
     private final List<Question> questions;
+    private final Random random;
 
-    public QuestionRepository(List<Question> questions) {
-        this.questions = questions;
+    public QuestionRepository() {
+        this.random = new Random();
+        this.questions = new ArrayList<>();
     }
 
     public List<Question> getQuestions() {
@@ -33,6 +36,6 @@ public class QuestionRepository {
     }
 
     public Question getRandomQuestion() {
-        return questions.get(new Random().nextInt(questions.size()));
+        return questions.get(random.nextInt(questions.size()));
     }
 }

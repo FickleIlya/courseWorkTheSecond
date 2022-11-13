@@ -25,12 +25,12 @@ public class JavaQuestionController {
     }
 
     @GetMapping("/add")
-    public Question addQuestion(@RequestParam String question, @RequestParam String answer) throws QuestionAlreadyExistsException, QuestionIsNullException {
+    public Question addQuestion(@RequestParam String question, @RequestParam String answer) {
         return questionService.add(question, answer);
     }
 
     @GetMapping("/remove")
-    public Question removeQuestion(@RequestParam String question, @RequestParam String answer) throws QuestionNotFoundException, QuestionIsNullException {
+    public Question removeQuestion(@RequestParam String question, @RequestParam String answer) {
         return questionService.remove(new Question(question, answer));
     }
 }

@@ -22,7 +22,7 @@ public class ExamController {
     }
 
     @GetMapping("/{amount}")
-    public Collection<Question> getQuestions(@PathVariable int amount) throws ExamAmountException, QuestionNotFoundException {
+    public Collection<Question> getQuestions(@PathVariable int amount){
         return examinerService.getQuestions(amount);
     }
 }

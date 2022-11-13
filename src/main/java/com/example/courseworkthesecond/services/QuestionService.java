@@ -9,11 +9,11 @@ import java.util.Collection;
 
 public interface QuestionService {
 
-        Question add(String question, String answer) throws QuestionAlreadyExistsException, QuestionIsNullException;
+        Question add(String question, String answer);
 
-        Question add(Question question) throws QuestionAlreadyExistsException, QuestionIsNullException;
+        Question add(Question question);
 
-        Question remove(Question question) throws QuestionNotFoundException, QuestionIsNullException;
+        Question remove(Question question);
 
         Collection<Question> getAll();
 

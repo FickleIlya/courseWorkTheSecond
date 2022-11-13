@@ -7,5 +7,5 @@ import com.example.courseworkthesecond.question.Question;
 import java.util.Collection;
 
 public interface ExaminerService {
-    Collection<Question> getQuestions(int amount) throws ExamAmountException, QuestionNotFoundException;
+    Collection<Question> getQuestions(int amount);
 }

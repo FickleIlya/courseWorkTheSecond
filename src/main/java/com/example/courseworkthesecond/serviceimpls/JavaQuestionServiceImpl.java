@@ -21,7 +21,7 @@ public class JavaQuestionServiceImpl implements QuestionService {
 
 
     @Override
-    public Question add(String question, String answer) throws QuestionAlreadyExistsException, QuestionIsNullException {
+    public Question add(String question, String answer) {
         if (question == null || answer == null) {
             throw new QuestionIsNullException("Question and answer must not be null");
         }
@@ -36,7 +36,7 @@ public class JavaQuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public Question add(Question question) throws QuestionAlreadyExistsException, QuestionIsNullException {
+    public Question add(Question question) {
         if (question == null) {
             throw new QuestionIsNullException("Question must not be null");
         }
@@ -50,7 +50,7 @@ public class JavaQuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public Question remove(Question question) throws QuestionNotFoundException, QuestionIsNullException {
+    public Question remove(Question question) {
         if (question == null) {
             throw new QuestionIsNullException("Question must not be null");
         }

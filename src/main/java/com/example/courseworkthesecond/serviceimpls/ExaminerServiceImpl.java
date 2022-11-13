@@ -27,7 +27,7 @@ public class ExaminerServiceImpl implements ExaminerService {
     }
 
     @Override
-    public Collection<Question> getQuestions(int amount) throws ExamAmountException, QuestionNotFoundException {
+    public Collection<Question> getQuestions(int amount) {
         if (questionService.getAll().isEmpty()) {
             throw new QuestionNotFoundException("There are no questions in repository");
         }
